@@ -29,7 +29,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "itinerisltd/preflight-command": "^0.5.0",
+        "itinerisltd/preflight-command": "^0.6.0",
         "wp-cli/wp-cli": "^2.0"
     },
     "require-dev": {
@@ -69,6 +69,9 @@
     "scripts": {
         "check-style": "phpcs --standard=ruleset.xml --colors -p -s",
         "pretag": [
+            "composer update",
+            "@test",
+            "@check-style",
             "composer normalize",
             "github_changelog_generator --no-verbose"
         ],
